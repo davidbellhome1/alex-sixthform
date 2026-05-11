@@ -23,7 +23,6 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -41,7 +40,6 @@
     padding: 32px 24px 80px;
   }
 
-  /* Header */
   .meta {
     display: flex;
     justify-content: space-between;
@@ -56,8 +54,7 @@
   }
   .meta .title { font-weight: 600; color: var(--ink); }
 
-  /* Hero */
-  .hero { margin-bottom: 72px; }
+  .hero { margin-bottom: 64px; }
   .eyebrow {
     font-size: 12px;
     letter-spacing: 0.18em;
@@ -91,10 +88,7 @@
     max-width: 600px;
   }
 
-  /* Intro */
-  .intro {
-    margin-bottom: 72px;
-  }
+  .intro { margin-bottom: 64px; }
   .intro p {
     font-size: 18px;
     line-height: 1.7;
@@ -111,12 +105,11 @@
     color: var(--rust);
   }
 
-  /* Quick rules box */
   .rules-box {
     background: var(--paper);
     border-left: 3px solid var(--rust);
     padding: 24px 28px;
-    margin: 48px 0 64px;
+    margin: 48px 0;
     font-size: 15px;
   }
   .rules-box .label {
@@ -125,32 +118,57 @@
     text-transform: uppercase;
     color: var(--rust);
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .rules-box ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  .rules-box li {
-    padding: 6px 0;
-    border-bottom: 1px dotted var(--grey-warm);
-  }
-  .rules-box li:last-child { border-bottom: none; }
-  .rules-box li strong { color: var(--ink); font-weight: 600; }
+  .rules-box p { margin-bottom: 14px; font-size: 15px; line-height: 1.6; }
+  .rules-box p:last-child { margin-bottom: 0; }
 
-  /* Section divider */
+  .blocks {
+    margin: 32px 0 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .block {
+    background: white;
+    border: 1px solid var(--grey-warm);
+    padding: 12px;
+    font-size: 12px;
+  }
+  .block-name {
+    font-weight: 700;
+    color: var(--rust);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .block-subjects {
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .block-subjects strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .blocks-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 12px;
+  }
+
   .divider {
     text-align: center;
-    margin: 80px 0;
+    margin: 72px 0;
     font-family: 'Fraunces', Georgia, serif;
     font-size: 24px;
     color: var(--rust);
     letter-spacing: 0.4em;
   }
 
-  /* Pathway cards */
   .pathway {
-    margin-bottom: 80px;
+    margin-bottom: 72px;
     position: relative;
   }
   .path-num {
@@ -201,48 +219,139 @@
     line-height: 1.7;
   }
 
-  /* Subject pills */
-  .pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 28px;
+  .stack-visual {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin: 24px 0 28px;
   }
-  .pill {
+  .slot {
+    background: var(--paper);
+    border: 1px solid var(--grey-warm);
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .slot-label {
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .slot-pick {
+    color: var(--ink);
+    font-weight: 600;
     font-size: 13px;
-    padding: 6px 14px;
+    line-height: 1.3;
+  }
+  .slot.active { background: var(--ink); }
+  .slot.active .slot-label { color: var(--rust-soft); }
+  .slot.active .slot-pick { color: var(--paper); }
+  .slot.plusone { background: var(--teal); }
+  .slot.plusone .slot-label { color: var(--teal-soft); }
+  .slot.plusone .slot-pick { color: var(--paper); }
+
+  .balance {
+    margin: 24px 0 28px;
+    padding: 20px 22px;
+    background: var(--paper);
+    border: 1px solid var(--grey-warm);
+  }
+  .balance-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .balance-bar {
+    display: flex;
+    height: 28px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: var(--grey-warm);
+  }
+  .balance-exam {
     background: var(--ink);
     color: var(--paper);
-    border-radius: 100px;
-    letter-spacing: 0.02em;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
   }
-  .pill.btec { background: var(--rust); }
-  .pill.plus1 { background: var(--teal); }
+  .balance-coursework {
+    background: var(--rust);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+  }
+  .balance-legend {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .legend-mark {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .legend-mark.exam { background: var(--ink); }
+  .legend-mark.cw { background: var(--rust); }
 
-  /* Open / closed / fit grid */
+  .applied {
+    margin: 20px 0 28px;
+    padding: 16px 22px;
+    background: white;
+    border-left: 3px solid var(--teal);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .applied-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
   .matrix {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
-    margin: 28px 0;
+    margin: 24px 0;
     border: 1px solid var(--ink);
   }
   .matrix-row {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 140px 1fr;
     border-bottom: 1px solid var(--grey-warm);
   }
   .matrix-row:last-child { border-bottom: none; }
   .matrix-label {
     background: var(--ink);
     color: var(--paper);
-    padding: 14px 16px;
-    font-size: 11px;
-    letter-spacing: 0.16em;
+    padding: 14px 14px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 600;
     display: flex;
     align-items: center;
+    line-height: 1.3;
   }
   .matrix-label.opens { background: var(--teal); }
   .matrix-label.closes { background: var(--rust); }
@@ -253,200 +362,112 @@
     line-height: 1.55;
   }
 
-  /* Fit meter */
-  .fit {
-    margin-top: 28px;
-    padding: 20px 24px;
-    background: var(--paper);
-    border: 1px solid var(--grey-warm);
-  }
-  .fit-label {
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-  .fit-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-  .fit-row:last-child { margin-bottom: 0; }
-  .fit-row .criterion { color: var(--ink-soft); }
-  .dots {
-    display: flex;
-    gap: 4px;
-  }
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--grey-warm);
-  }
-  .dot.on { background: var(--rust); }
-  .dot.on.teal { background: var(--teal); }
-
-  /* Subject matrix big table */
-  .big-matrix-wrap {
+  .breakdown {
     margin: 64px 0;
     overflow-x: auto;
   }
-  .big-matrix {
+  .breakdown-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
     min-width: 480px;
   }
-  .big-matrix th, .big-matrix td {
+  .breakdown-table th, .breakdown-table td {
     padding: 12px 10px;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid var(--grey-warm);
+    vertical-align: top;
   }
-  .big-matrix th {
+  .breakdown-table th {
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .breakdown-table td:first-child {
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 13px;
+  }
+  .pct-bar {
+    display: flex;
+    height: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--grey-warm);
+    margin-top: 4px;
+    width: 100px;
+  }
+  .pct-bar .e { background: var(--ink); }
+  .pct-bar .c { background: var(--rust); }
+
+  .compare {
+    margin: 64px 0;
+    overflow-x: auto;
+  }
+  .compare-grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 480px;
+  }
+  .compare-grid th, .compare-grid td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey-warm);
+    vertical-align: top;
+  }
+  .compare-grid th {
     background: var(--ink);
     color: var(--paper);
     font-weight: 500;
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 14px 8px;
   }
-  .big-matrix th:first-child { text-align: left; padding-left: 16px; }
-  .big-matrix td:first-child {
-    text-align: left;
-    padding-left: 16px;
-    font-weight: 500;
+  .compare-grid th:first-child, .compare-grid td:first-child {
+    font-weight: 600;
     color: var(--ink);
+    font-size: 13px;
     background: var(--paper);
   }
-  .big-matrix td.x {
-    background: var(--rust);
-    color: var(--paper);
-    font-weight: 600;
-  }
-  .big-matrix td.x.teal { background: var(--teal); }
-  .big-matrix td.dim {
-    color: var(--grey-warm);
-  }
 
-  /* Gap section */
-  .gap-section {
-    margin: 80px 0;
+  .decision {
+    margin: 80px 0 60px;
     padding: 40px 32px;
     background: var(--ink);
     color: var(--paper);
   }
-  .gap-section h2 {
+  .decision h2 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 400;
     font-size: 36px;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
     color: var(--paper);
     font-variation-settings: "SOFT" 50;
   }
-  .gap-section .sub {
-    font-style: italic;
-    font-family: 'Fraunces', Georgia, serif;
-    color: var(--rust-soft);
-    margin-bottom: 32px;
-    font-size: 18px;
-  }
-  .gap-row {
-    display: grid;
-    grid-template-columns: 110px 1fr 50px;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 14px;
-    font-size: 14px;
-  }
-  .gap-subject { color: var(--paper); }
-  .gap-bar {
-    position: relative;
-    height: 10px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 100px;
-    overflow: hidden;
-  }
-  .gap-current {
-    position: absolute;
-    height: 100%;
-    background: var(--rust);
-    border-radius: 100px;
-  }
-  .gap-target {
-    position: absolute;
-    top: -3px;
-    height: 16px;
-    width: 2px;
-    background: var(--paper);
-  }
-  .gap-grade {
-    text-align: right;
-    color: var(--rust-soft);
-    font-weight: 600;
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 16px;
-  }
-  .gap-legend {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    display: flex;
-    gap: 24px;
-    font-size: 12px;
-    color: var(--rust-soft);
-  }
-  .legend-item { display: flex; align-items: center; gap: 8px; }
-  .legend-mark {
-    width: 16px;
-    height: 6px;
-    background: var(--rust);
-    border-radius: 100px;
-  }
-  .legend-mark.target { background: var(--paper); width: 2px; height: 14px; }
-
-  /* Plus one */
-  .plus-one {
-    margin: 80px 0;
-    padding: 40px 32px;
-    background: var(--paper);
-    border: 1px solid var(--teal);
-  }
-  .plus-one h2 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    font-size: 36px;
+  .decision p {
+    font-size: 17px;
+    line-height: 1.7;
     margin-bottom: 16px;
-    color: var(--teal);
+    color: var(--paper);
   }
-  .plus-one p { font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
-
-  /* Where I land */
-  .verdict {
-    margin: 96px 0 60px;
-    text-align: left;
-  }
-  .verdict h2 {
+  .decision p strong { color: var(--rust-soft); }
+  .decision .question {
     font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
     font-style: italic;
-    font-size: clamp(36px, 6vw, 52px);
-    line-height: 1.05;
-    margin-bottom: 28px;
-    color: var(--ink);
-    font-variation-settings: "SOFT" 80, "WONK" 1;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--rust-soft);
+    margin: 28px 0;
+    padding: 20px 24px;
+    border-left: 3px solid var(--rust);
+    font-variation-settings: "SOFT" 80;
   }
-  .verdict p {
-    font-size: 18px;
-    line-height: 1.75;
-    margin-bottom: 16px;
-    max-width: 640px;
-  }
+
   .signature {
     font-family: 'Fraunces', Georgia, serif;
     font-style: italic;
@@ -456,9 +477,8 @@
     font-variation-settings: "SOFT" 100, "WONK" 1;
   }
 
-  /* Footnote */
   .footnote {
-    margin-top: 80px;
+    margin-top: 64px;
     padding-top: 24px;
     border-top: 1px solid var(--ink);
     font-size: 12px;
@@ -467,23 +487,92 @@
     letter-spacing: 0.04em;
   }
 
-  /* Mobile tweaks */
+  .tuesday {
+    margin: 72px 0 0;
+  }
+  .tuesday-intro {
+    margin-bottom: 32px;
+  }
+  .tuesday-intro h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(28px, 5vw, 38px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    font-variation-settings: "SOFT" 50;
+  }
+  .tuesday-intro p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 600px;
+  }
+  .day-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+  .day {
+    background: var(--paper);
+    border: 1px solid var(--grey-warm);
+    padding: 22px 24px;
+  }
+  .day-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .day h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    font-variation-settings: "SOFT" 30;
+  }
+  .day-timeline {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .day-timeline strong {
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .day-feel {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--grey-warm);
+  }
+
   @media (max-width: 600px) {
     .page { padding: 20px 18px 60px; }
     body { font-size: 16px; }
-    .hero { margin-bottom: 56px; }
+    .hero { margin-bottom: 48px; }
     .intro p { font-size: 17px; }
-    .pathway { margin-bottom: 64px; }
+    .pathway { margin-bottom: 56px; }
     .path-num { font-size: 72px; top: -10px; }
-    .matrix-row { grid-template-columns: 120px 1fr; }
-    .matrix-label { font-size: 10px; padding: 12px 10px; line-height: 1.3; }
+    .matrix-row { grid-template-columns: 110px 1fr; }
+    .matrix-label { font-size: 9px; padding: 12px 10px; }
     .matrix-content { padding: 12px 14px; font-size: 14px; }
-    .gap-section { padding: 32px 22px; }
-    .gap-row { grid-template-columns: 90px 1fr 40px; gap: 10px; font-size: 13px; }
-    .plus-one { padding: 32px 22px; }
-    .fit { padding: 18px 18px; }
-    .fit-row { font-size: 13px; }
-    .dot { width: 10px; height: 10px; }
+    .decision { padding: 32px 22px; }
+    .decision h2 { font-size: 28px; }
+    .decision .question { font-size: 20px; padding: 16px 18px; }
+    .blocks { grid-template-columns: repeat(2, 1fr); }
+    .stack-visual { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .balance { padding: 16px 18px; }
+    .balance-bar { height: 24px; }
+    .day { padding: 18px 20px; }
+    .day h3 { font-size: 20px; }
   }
 </style>
 </head>
@@ -492,31 +581,44 @@
 
   <div class="meta">
     <span class="title">For Alex</span>
-    <span>From Mum &amp; Dad / May 2026</span>
+    <span>From Dad &amp; Mum</span>
   </div>
 
   <header class="hero">
     <div class="eyebrow">Sixth Form pathway map</div>
-    <h1>Four routes. <em>One Alex.</em></h1>
-    <p class="dek">Gordon's runs 24 A Levels and a couple of BTECs. Here are the four routes through that menu that actually fit what you want.</p>
+    <h1>Three routes. <em>One Alex.</em></h1>
+    <p class="dek">Three sensible ways through Gordon's Sixth Form for the things you've told us you want. Plus the coursework-to-exam balance for each one.</p>
   </header>
 
   <section class="intro">
-    <p>You want to run your own water park one day. You want to work with animals, possibly at Disney's Animal Kingdom. You don't want to sit at a desk. You like drama, you're flying in Business, and you and Matthew are setting up a reselling business on Whatnot.</p>
-    <p>Good starting point. That tells me a lot of the standard A Level advice doesn't apply to you, so here are the four routes through Gordon's that I think do.</p>
-    <p>None of them is perfect. Read them, push back, tell me where I've got you wrong.</p>
+    <p>You want to run your own water park one day. Maybe work with animals, possibly at Disney's Animal Kingdom. You don't want a desk job. Drama matters to you. Business is your strongest subject. You and Matthew are setting up a Whatnot reselling business.</p>
+    <p>We looked hard at BTEC Sport. It's probably too much sport and not enough leisure management. Seven of nine units are sport content, so it's off the list.</p>
+    <p>That leaves three options below. Each one points at university or an apprenticeship, just by different routes. Read them and tell us what you think.</p>
   </section>
 
   <div class="rules-box">
-    <div class="label">How Gordon's Sixth Form works</div>
-    <ul>
-      <li><strong>3 main subjects</strong> (A Level or BTEC) plus <strong>1 supplementary "+1"</strong> in Year 12 only.</li>
-      <li><strong>BTEC Business</strong> counts as one A Level. <strong>BTEC Sport</strong> (Diploma) counts as two.</li>
-      <li><strong>EPQ</strong> is the most popular +1. You pick the topic. 5,000 words. Up to 28 UCAS points at A*.</li>
-      <li><strong>Not on the menu:</strong> Politics, Religious Studies (full A Level), Philosophy, Law, Travel &amp; Tourism, IB.</li>
-      <li><strong>A Level entry:</strong> 5+ GCSEs at grade 5, including English and Maths at 5.</li>
-      <li><strong>BTEC entry:</strong> 5+ GCSEs at grade 4, including English and Maths at 4.</li>
-    </ul>
+    <div class="label">How Gordon's actually picks subjects</div>
+    <p>Three A Levels, one from each of three timetable blocks (A, B, C, D). Plus one "+1" supplementary option from block E in Year 12 only.</p>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="block-name">Block A</div>
+        <div class="block-subjects">Maths, Chemistry, Economics, Sociology, English Lit, PE, Art, Photography, <strong>Biology</strong></div>
+      </div>
+      <div class="block">
+        <div class="block-name">Block B</div>
+        <div class="block-subjects">Maths, <strong>Biology</strong>, Chemistry, Product Design, Psychology, <strong>Business</strong>, History, <strong>Media</strong></div>
+      </div>
+      <div class="block">
+        <div class="block-name">Block C</div>
+        <div class="block-subjects">Physics, <strong>Geography</strong>, Economics, English Language, Music, English Lit, Spanish/German/French</div>
+      </div>
+      <div class="block">
+        <div class="block-name">Block D</div>
+        <div class="block-subjects">Physics, STEM, Psychology, Computer Science, History, <strong>Media</strong>, <strong>Drama</strong>, BTEC Business</div>
+      </div>
+    </div>
+    <p class="blocks-note">Subjects in bold are in your shortlist. The rule that matters: only one subject per block. Drama only sits in D, Geography only in C, Business only in B, so a lot of the combinations build themselves.</p>
   </div>
 
   <div class="divider">— · —</div>
@@ -524,55 +626,61 @@
   <!-- PATHWAY 01 -->
   <section class="pathway">
     <div class="path-num">01</div>
-    <span class="path-tag">Path 01 · Academic + Entrepreneurial</span>
+    <span class="path-tag">Option 01 · Keeps Drama</span>
     <h2>The Water Park Founder</h2>
     <p class="stack">Business · Geography · Drama · EPQ</p>
-    <div class="pills">
-      <span class="pill">Business A Level</span>
-      <span class="pill">Geography A Level</span>
-      <span class="pill">Drama A Level</span>
-      <span class="pill plus1">+ EPQ</span>
+
+    <div class="stack-visual">
+      <div class="slot active">
+        <div class="slot-label">Block B</div>
+        <div class="slot-pick">Business</div>
+      </div>
+      <div class="slot active">
+        <div class="slot-label">Block C</div>
+        <div class="slot-pick">Geography</div>
+      </div>
+      <div class="slot active">
+        <div class="slot-label">Block D</div>
+        <div class="slot-pick">Drama</div>
+      </div>
+      <div class="slot">
+        <div class="slot-label">Block A</div>
+        <div class="slot-pick" style="color:var(--ink-soft);font-weight:400;">—</div>
+      </div>
+      <div class="slot plusone">
+        <div class="slot-label">+1</div>
+        <div class="slot-pick">EPQ</div>
+      </div>
     </div>
 
-    <p>Built around the water park ambition. Business is your strongest GCSE by a distance. Keep going with it. Geography matters more than you'd think for a leisure business: site selection, weather, demographics, planning, environmental impact. Drama is the one that surprises people. If you run a business one day, you spend most of your time pitching, persuading and presenting customers and staff. Drama is the only A Level that explicitly trains that.</p>
-    <p>For your EPQ, pick something like <em>"a feasibility study for a UK family water park"</em>. Real 5,000-word project. Useful piece of work to walk into a UCAS interview with.</p>
+    <div class="balance">
+      <div class="balance-label">Coursework vs Exam (across the whole stack)</div>
+      <div class="balance-bar">
+        <div class="balance-exam" style="width:60%;">60% Exam</div>
+        <div class="balance-coursework" style="width:40%;">40% Coursework</div>
+      </div>
+      <div class="balance-legend">
+        <span><span class="legend-mark exam"></span>Written exams</span>
+        <span><span class="legend-mark cw"></span>Coursework, performance &amp; project work</span>
+      </div>
+    </div>
+
+    <div class="applied">
+      <div class="applied-label">Hands-on / applied work</div>
+      <strong>Drama:</strong> 60% practical, devising a piece, performing or designing live to a visiting examiner. <strong>Geography:</strong> 4 days of fieldwork over two years plus a 4,000-word independent investigation you design yourself. <strong>EPQ:</strong> 100% your own project, your own topic, your own deadlines.
+    </div>
+
+    <p>Built around the water park ambition. Business is your strongest subject, so keep going with it. Geography matters more than it looks for leisure businesses: site, demographics, weather, planning, environment. Drama keeps the performance and presentation side live. If you're running customer-facing businesses one day, that's a muscle you'll use a lot.</p>
+    <p>EPQ topic suggests itself: a feasibility study for a UK family water park.</p>
 
     <div class="matrix">
       <div class="matrix-row">
         <div class="matrix-label opens">Doors this opens</div>
-        <div class="matrix-content">Business and management degrees. Real estate and property development. Hospitality and leisure management. Degree apprenticeships at Center Parcs, Merlin, Whitbread, IHG. Pretty much any non-STEM university route.</div>
+        <div class="matrix-content">Apprenticeships at Center Parcs, Merlin, IHG, Whitbread. Business management, hospitality, leisure management, events management or property development degrees if you go to uni. Most non-STEM routes either way.</div>
       </div>
       <div class="matrix-row">
         <div class="matrix-label closes">Doors this closes</div>
-        <div class="matrix-content">Anything science-heavy. If you decide later you want vet science, zoology or marine biology, this isn't the stack.</div>
-      </div>
-    </div>
-
-    <div class="fit">
-      <div class="fit-label">Fit for Alex</div>
-      <div class="fit-row">
-        <span class="criterion">Plays to current strengths</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Matches your goal (water park / leisure)</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Keeps you out of a desk job</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Realistic given current grades</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span>
-        </div>
+        <div class="matrix-content">Direct entry to a science degree from school. Zoology, animal behaviour or marine biology direct at 18 isn't reachable from this stack. Those are still reachable later via a Level 3 Animal Management BTEC, a zookeeper apprenticeship, or a university foundation year, just with an extra year or two of route-building.</div>
       </div>
     </div>
   </section>
@@ -580,55 +688,62 @@
   <!-- PATHWAY 02 -->
   <section class="pathway">
     <div class="path-num">02</div>
-    <span class="path-tag">Path 02 · Animals at the centre</span>
-    <h2>The Animal Kingdom Route</h2>
+    <span class="path-tag">Option 02 · Keeps Biology</span>
+    <h2>The Animal Route</h2>
     <p class="stack">Biology · Business · Geography · EPQ</p>
-    <div class="pills">
-      <span class="pill">Biology A Level</span>
-      <span class="pill">Business A Level</span>
-      <span class="pill">Geography A Level</span>
-      <span class="pill plus1">+ EPQ</span>
+
+    <div class="stack-visual">
+      <div class="slot active">
+        <div class="slot-label">Block A</div>
+        <div class="slot-pick">Biology</div>
+      </div>
+      <div class="slot active">
+        <div class="slot-label">Block B</div>
+        <div class="slot-pick">Business</div>
+      </div>
+      <div class="slot active">
+        <div class="slot-label">Block C</div>
+        <div class="slot-pick">Geography</div>
+      </div>
+      <div class="slot">
+        <div class="slot-label">Block D</div>
+        <div class="slot-pick" style="color:var(--ink-soft);font-weight:400;">—</div>
+      </div>
+      <div class="slot plusone">
+        <div class="slot-label">+1</div>
+        <div class="slot-pick">EPQ</div>
+      </div>
     </div>
 
-    <p>Pick this if animals genuinely sit at the centre of what you want, not as part of the leisure venue. Zookeeping, conservation, marine biology and zoology degrees all want Biology A Level. So do most direct animal-care jobs.</p>
-    <p>Honest problem. Your Biology working grade is 4. Target is 7/8. You'd need real progress in Year 11 to start the A Level on stable footing. Possible, but Biology has to become something you actively work on rather than something you tolerate.</p>
+    <div class="balance">
+      <div class="balance-label">Coursework vs Exam (across the whole stack)</div>
+      <div class="balance-bar">
+        <div class="balance-exam" style="width:80%;">80% Exam</div>
+        <div class="balance-coursework" style="width:20%;">20% CW</div>
+      </div>
+      <div class="balance-legend">
+        <span><span class="legend-mark exam"></span>Written exams</span>
+        <span><span class="legend-mark cw"></span>Coursework, fieldwork &amp; project work</span>
+      </div>
+    </div>
+
+    <div class="applied">
+      <div class="applied-label">Hands-on / applied work</div>
+      <strong>Biology:</strong> 12 required practicals (lab work) but assessed through the written exams, not separate coursework. <strong>Geography:</strong> 4 days of fieldwork plus the 4,000-word investigation. <strong>EPQ:</strong> independent project. Heaviest exam load of the three options.
+    </div>
+
+    <p>This is the route if animals are central to what you want to do, and if you might want a science degree in zoology, animal behaviour, marine biology or conservation as the way in. Biology A Level is the cleanest route into those degrees direct from school.</p>
+    <p>Worth being clear though. Biology isn't the only way into hands-on animal work. Zookeeper and animal-attraction jobs typically need 5 GCSEs plus a Level 3 animal qualification (a specialist Animal Management BTEC at somewhere like Sparsholt or Plumpton, or an apprenticeship at a zoo). And if you finished sixth form without Biology and then decided you wanted a zoology degree, several universities (Plymouth, Derby, others) offer foundation-year routes specifically for that. So this isn't "Biology or never work with animals." It's "Biology is the most direct route, and the only stack at Gordon's that keeps the science-degree path open from age 18."</p>
+    <p>Trade-off: Drama drops as a qualification. You'd still do school productions and the band, just not for the A Level.</p>
 
     <div class="matrix">
       <div class="matrix-row">
         <div class="matrix-label opens">Doors this opens</div>
-        <div class="matrix-content">Zoology. Wildlife biology. Animal behaviour and conservation. Zoo and aquarium management. BIAZA-accredited training routes. Disney's Animal Programs (real internships and cast roles for animal science graduates). Marine biology.</div>
+        <div class="matrix-content">Direct entry to zoology, animal behaviour, marine biology, conservation or wildlife management degrees. Vet nursing routes. The science and research end of the animal world, including Disney's professional animal-programs internships, which want zoology/biology-related majors.</div>
       </div>
       <div class="matrix-row">
         <div class="matrix-label closes">Doors this closes</div>
-        <div class="matrix-content">Drama drops out of the academic stack (you'd keep doing it through school productions and band, just not for a qualification). It's also the heaviest academic load of the four routes.</div>
-      </div>
-    </div>
-
-    <div class="fit">
-      <div class="fit-label">Fit for Alex</div>
-      <div class="fit-row">
-        <span class="criterion">Plays to current strengths</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Matches your goal (animals / Disney)</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Keeps you out of a desk job</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Realistic given current grades</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
+        <div class="matrix-content">Drama. The stack still works fine for the water park / leisure route through Business and Geography, you'd just be presenting a different story.</div>
       </div>
     </div>
   </section>
@@ -636,225 +751,253 @@
   <!-- PATHWAY 03 -->
   <section class="pathway">
     <div class="path-num">03</div>
-    <span class="path-tag">Path 03 · Hybrid · my pick if forced to choose</span>
-    <h2>The Experience Designer</h2>
-    <p class="stack">Business · Drama · BTEC Sport (Double) · EPQ</p>
-    <div class="pills">
-      <span class="pill">Business A Level</span>
-      <span class="pill">Drama A Level</span>
-      <span class="pill btec">BTEC Sport (Double)</span>
-      <span class="pill plus1">+ EPQ</span>
+    <span class="path-tag">Option 03 · Least exams, most making</span>
+    <h2>The Hands-On Route</h2>
+    <p class="stack">BTEC Business · Geography · Media Studies · EPQ</p>
+
+    <div class="stack-visual">
+      <div class="slot active">
+        <div class="slot-label">Block D</div>
+        <div class="slot-pick">BTEC Bus.</div>
+      </div>
+      <div class="slot active">
+        <div class="slot-label">Block C</div>
+        <div class="slot-pick">Geography</div>
+      </div>
+      <div class="slot active">
+        <div class="slot-label">Block B</div>
+        <div class="slot-pick">Media</div>
+      </div>
+      <div class="slot">
+        <div class="slot-label">Block A</div>
+        <div class="slot-pick" style="color:var(--ink-soft);font-weight:400;">—</div>
+      </div>
+      <div class="slot plusone">
+        <div class="slot-label">+1</div>
+        <div class="slot-pick">EPQ</div>
+      </div>
     </div>
 
-    <p>Hear me out before you bin this one. "BTEC Sport" sounds like it's for athletes. The way Gordon's runs it, it isn't. Of the nine units they teach, only one needs you to actually perform, and Gordon's doesn't even pick that one. The rest is sports psychology, leadership, customer behaviour, business in sport, and health and safety. The big external exam at the end is a 3-hour case study about running a leisure business. It's a Business and Leisure Management qualification with the wrong name on the cover.</p>
-    <p>Stack it with Business A Level and Drama A Level and you've got the three sides of running a venue: commercial, customer-facing, and operational. Mostly coursework, lighter on exams than three A Levels, which suits you better. If I had to bet on what you're doing in ten years, you're running an attraction, a leisure destination, or an experience venue. This is the stack that points there.</p>
+    <div class="balance">
+      <div class="balance-label">Coursework vs Exam (across the whole stack)</div>
+      <div class="balance-bar">
+        <div class="balance-exam" style="width:50%;">50% Exam</div>
+        <div class="balance-coursework" style="width:50%;">50% Coursework</div>
+      </div>
+      <div class="balance-legend">
+        <span><span class="legend-mark exam"></span>Written exams &amp; supervised tasks</span>
+        <span><span class="legend-mark cw"></span>Coursework, production &amp; portfolio</span>
+      </div>
+    </div>
+
+    <div class="applied">
+      <div class="applied-label">Hands-on / applied work</div>
+      <strong>BTEC Business:</strong> coursework-led with one exam (Finance) and one supervised marketing task. Portfolio of real assignments. <strong>Media Studies:</strong> 30% non-exam, you actually make media products (film, magazine, website) to a brief. <strong>Geography:</strong> 4 days of fieldwork plus 4,000-word investigation. <strong>EPQ:</strong> independent project. Most practical stack of the three.
+    </div>
+
+    <p>The version with the most coursework and the fewest exams. BTEC Business is more portfolio than A Level Business. Media Studies you've said you'd like. It covers how stories, brands and audiences work, which is directly useful for marketing a leisure venue one day. Half exam, half making things.</p>
+    <p>It's also a slightly lower bar on grade requirements, so if Year 11 doesn't quite go to plan, this stack stays open more easily.</p>
+    <p>Drama drops here too. This stack points toward apprenticeships and applied degrees rather than traditional academic ones.</p>
+    <p style="font-size:14px;color:var(--ink-soft);font-style:italic;">If Media doesn't appeal, Psychology fits the same Block B slot. Psychology is 100% exam though, so swapping it in shifts the stack back toward 67% exam / 33% coursework.</p>
 
     <div class="matrix">
       <div class="matrix-row">
         <div class="matrix-label opens">Doors this opens</div>
-        <div class="matrix-content">Leisure management. Event management. Hospitality. Theme park operations. Merlin, Disney and Universal management trainee schemes. Sports business. Experience design. Your own venture eventually. Most degree apprenticeships fit this stack.</div>
+        <div class="matrix-content">Most leisure, hospitality, business, events and marketing apprenticeships. Direct entry to industry at 18. Applied degrees in business management, leisure, hospitality, marketing or media if you go the university route.</div>
       </div>
       <div class="matrix-row">
         <div class="matrix-label closes">Doors this closes</div>
-        <div class="matrix-content">Most science-led routes. Some Russell Group academic degrees. But you weren't aiming there anyway.</div>
-      </div>
-    </div>
-
-    <div class="fit">
-      <div class="fit-label">Fit for Alex</div>
-      <div class="fit-row">
-        <span class="criterion">Plays to current strengths</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Matches your goal (theme park / leisure)</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Keeps you out of a desk job</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Realistic given current grades</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PATHWAY 04 -->
-  <section class="pathway">
-    <div class="path-num">04</div>
-    <span class="path-tag">Path 04 · Vocational · backup if focus stays a problem</span>
-    <h2>The Fast-Lane Vocational</h2>
-    <p class="stack">BTEC Business · BTEC Sport (Double) · Drama · Sports Leaders</p>
-    <div class="pills">
-      <span class="pill btec">BTEC Business</span>
-      <span class="pill btec">BTEC Sport (Double)</span>
-      <span class="pill">Drama A Level</span>
-      <span class="pill plus1">+ Sports Leaders</span>
-    </div>
-
-    <p>Most coursework-heavy of the four. Almost no exams, assessment by portfolio and project. Lines you up for a degree apprenticeship at 18 with someone like Center Parcs, Merlin, Whitbread, GLL or a major hotel group. Paid job, real responsibility, qualification at the end, no student debt.</p>
-    <p>For your goals specifically, this could be the best route, not the backup. Worth taking on its own merits. The version to seriously consider if Year 11 doesn't close the focus gap and the working grades stay below target, but worth a look either way.</p>
-
-    <div class="matrix">
-      <div class="matrix-row">
-        <div class="matrix-label opens">Doors this opens</div>
-        <div class="matrix-content">Every leisure, hospitality, sport and business degree apprenticeship in the country. Direct entry into industry at 18. Faster route to commercial responsibility. University still possible later via degree apprenticeship.</div>
-      </div>
-      <div class="matrix-row">
-        <div class="matrix-label closes">Doors this closes</div>
-        <div class="matrix-content">Top-tier traditional universities for any subject. Vet science, zoology, marine biology. Anything that wants pure A Levels.</div>
-      </div>
-    </div>
-
-    <div class="fit">
-      <div class="fit-label">Fit for Alex</div>
-      <div class="fit-row">
-        <span class="criterion">Plays to current strengths</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Matches your goal (water park / leisure)</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Keeps you out of a desk job</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
-      </div>
-      <div class="fit-row">
-        <span class="criterion">Realistic given current grades</span>
-        <div class="dots">
-          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-        </div>
+        <div class="matrix-content">Drama. The most academically competitive universities. Any science route. The vet/zoology side.</div>
       </div>
     </div>
   </section>
 
   <div class="divider">— · —</div>
 
-  <!-- BIG MATRIX -->
-  <section>
-    <div class="eyebrow" style="margin-bottom:16px;">Subject grid</div>
-    <h2 style="font-family:'Fraunces',serif;font-weight:400;font-size:32px;margin-bottom:24px;font-variation-settings:'SOFT' 50;">Which subjects appear where</h2>
-    <div class="big-matrix-wrap">
-      <table class="big-matrix">
-        <thead>
-          <tr>
-            <th>Subject</th>
-            <th>P1</th>
-            <th>P2</th>
-            <th>P3</th>
-            <th>P4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Business A Level</td><td class="x">✓</td><td class="x">✓</td><td class="x">✓</td><td class="dim">—</td></tr>
-          <tr><td>Geography A Level</td><td class="x">✓</td><td class="x">✓</td><td class="dim">—</td><td class="dim">—</td></tr>
-          <tr><td>Drama A Level</td><td class="x">✓</td><td class="dim">—</td><td class="x">✓</td><td class="x">✓</td></tr>
-          <tr><td>Biology A Level</td><td class="dim">—</td><td class="x">✓</td><td class="dim">—</td><td class="dim">—</td></tr>
-          <tr><td>BTEC Business</td><td class="dim">—</td><td class="dim">—</td><td class="dim">—</td><td class="x teal">✓</td></tr>
-          <tr><td>BTEC Sport (Double)</td><td class="dim">—</td><td class="dim">—</td><td class="x teal">✓</td><td class="x teal">✓</td></tr>
-          <tr><td>EPQ</td><td class="x">✓</td><td class="x">✓</td><td class="x">✓</td><td class="dim">—</td></tr>
-          <tr><td>Sports Leaders / Gym Inst.</td><td class="dim">—</td><td class="dim">—</td><td class="dim">—</td><td class="x teal">✓</td></tr>
-        </tbody>
-      </table>
+  <!-- DETAILED SUBJECT BREAKDOWN -->
+  <section class="breakdown">
+    <div class="eyebrow" style="margin-bottom:16px;">Subject by subject</div>
+    <h2 style="font-family:'Fraunces',serif;font-weight:400;font-size:32px;margin-bottom:8px;font-variation-settings:'SOFT' 50;">How each subject is actually assessed</h2>
+    <p style="color:var(--ink-soft);margin-bottom:24px;font-size:15px;">Pulled from the Gordon's options guide and the published exam board specifications.</p>
+
+    <table class="breakdown-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Exam</th>
+          <th>Coursework / NEA</th>
+          <th>Mix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A Level Business</td>
+          <td>3 written papers, end of Y13</td>
+          <td>None</td>
+          <td>100% / 0%<br><span class="pct-bar"><span class="e" style="width:100%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>A Level Geography</td>
+          <td>3 written papers</td>
+          <td>4,000-word independent fieldwork investigation</td>
+          <td>80% / 20%<br><span class="pct-bar"><span class="e" style="width:80%;"></span><span class="c" style="width:20%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>A Level Drama</td>
+          <td>1 written paper (Theatre Makers in Practice)</td>
+          <td>Devised performance + scripted performance + portfolio</td>
+          <td>40% / 60%<br><span class="pct-bar"><span class="e" style="width:40%;"></span><span class="c" style="width:60%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>A Level Biology</td>
+          <td>3 written papers (12 practicals assessed within them)</td>
+          <td>None separately graded</td>
+          <td>100% / 0%<br><span class="pct-bar"><span class="e" style="width:100%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>A Level Media Studies</td>
+          <td>2 written papers</td>
+          <td>Cross-media production (film/magazine/website to brief)</td>
+          <td>70% / 30%<br><span class="pct-bar"><span class="e" style="width:70%;"></span><span class="c" style="width:30%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>A Level Psychology</td>
+          <td>3 written papers</td>
+          <td>None</td>
+          <td>100% / 0%<br><span class="pct-bar"><span class="e" style="width:100%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>BTEC Business</td>
+          <td>1 written exam (Finance) + 1 supervised task (Marketing)</td>
+          <td>3 coursework units (Exploring Business + Recruitment)</td>
+          <td>~58% / ~42%<br><span class="pct-bar"><span class="e" style="width:58%;"></span><span class="c" style="width:42%;"></span></span></td>
+        </tr>
+        <tr>
+          <td>EPQ (+1)</td>
+          <td>None</td>
+          <td>5,000-word report + production log + presentation</td>
+          <td>0% / 100%<br><span class="pct-bar"><span class="c" style="width:100%;"></span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="compare">
+    <div class="eyebrow" style="margin-bottom:16px;">Side by side</div>
+    <h2 style="font-family:'Fraunces',serif;font-weight:400;font-size:32px;margin-bottom:24px;font-variation-settings:'SOFT' 50;">Three options at a glance</h2>
+    <table class="compare-grid">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Option 01</th>
+          <th>Option 02</th>
+          <th>Option 03</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Business</td>
+          <td>✓ A Level</td>
+          <td>✓ A Level</td>
+          <td>✓ BTEC</td>
+        </tr>
+        <tr>
+          <td>Geography</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Drama</td>
+          <td>✓</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Biology</td>
+          <td>—</td>
+          <td>✓</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Media Studies</td>
+          <td>—</td>
+          <td>—</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Exam vs coursework</td>
+          <td>60% / 40%</td>
+          <td>80% / 20%</td>
+          <td>50% / 50%</td>
+        </tr>
+        <tr>
+          <td>Points toward</td>
+          <td>Leisure / hospitality / business</td>
+          <td>Zoology / animal science</td>
+          <td>Apprenticeship-first / applied</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TUESDAY PICTURE -->
+  <section class="tuesday">
+    <div class="tuesday-intro">
+      <div class="eyebrow">Picture the two years</div>
+      <h2>Which Tuesday in Year 12 sounds most like you?</h2>
+      <p>The destinations aren't that different. Most things stay reachable from all three. What really changes is the day-to-day shape of the next two years. Read these three Tuesdays and notice which one you'd actually want to be in.</p>
+    </div>
+
+    <div class="day-cards">
+
+      <div class="day">
+        <div class="day-tag">Tuesday in Option 01</div>
+        <h3>Business, fieldwork, stage</h3>
+        <div class="day-timeline">
+          <strong>Morning:</strong> Business lesson on global marketing case studies. Notes, discussion, working through past paper answers. <strong>After lunch:</strong> Drama rehearsal for the devised piece (60% of the A Level). Block work, character development, designing your section. <strong>Evening prep:</strong> reading the Geography textbook on regenerating places, sketching essay plans for tomorrow.
+        </div>
+        <div class="day-feel">Mix of academic and stage. Performance work keeps you out of the chair for at least one block of the day.</div>
+      </div>
+
+      <div class="day">
+        <div class="day-tag">Tuesday in Option 02</div>
+        <h3>Lab, library, fieldwork data</h3>
+        <div class="day-timeline">
+          <strong>Morning:</strong> Biology practical on enzyme kinetics in the lab, writing up the results. <strong>After lunch:</strong> Business lesson, same as Option 01. <strong>Evening prep:</strong> revising Biology Topic 3, analysing fieldwork data in Excel for the Geography investigation.
+        </div>
+        <div class="day-feel">Heavy on science and reading. Lots of exam revision sitting underneath everything. The most academic of the three.</div>
+      </div>
+
+      <div class="day">
+        <div class="day-tag">Tuesday in Option 03</div>
+        <h3>Assignments, edit suite, projects</h3>
+        <div class="day-timeline">
+          <strong>Morning:</strong> BTEC Business coursework session, working on your Exploring Business assignment. <strong>After lunch:</strong> Media Studies in the edit suite, cutting together your cross-media production piece. <strong>Evening prep:</strong> Geography fieldwork write-up, sorting photos from the coast trip.
+        </div>
+        <div class="day-feel">Coursework deadlines and project work rather than revision. Most of what you do has something to show at the end.</div>
+      </div>
+
     </div>
   </section>
 
-  <!-- THE GAP -->
-  <section class="gap-section">
-    <h2>The honest bit</h2>
-    <p class="sub">Where your spring grades sit against target, and what it means.</p>
+  <!-- THE DECISION -->
+  <section class="decision">
+    <h2>Three things to weight</h2>
+    <p>Once you've pictured the Tuesdays, the choice comes down to how much each of these three things matters to you. Rank them in your head:</p>
 
-    <div class="gap-row">
-      <span class="gap-subject">Business</span>
-      <div class="gap-bar"><div class="gap-current" style="width:78%;"></div><div class="gap-target" style="left:88%;"></div></div>
-      <span class="gap-grade">7 / 8</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Chemistry</span>
-      <div class="gap-bar"><div class="gap-current" style="width:67%;"></div><div class="gap-target" style="left:94%;"></div></div>
-      <span class="gap-grade">6 / 9</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Drama</span>
-      <div class="gap-bar"><div class="gap-current" style="width:56%;"></div><div class="gap-target" style="left:94%;"></div></div>
-      <span class="gap-grade">5 / 9</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">English Lit</span>
-      <div class="gap-bar"><div class="gap-current" style="width:56%;"></div><div class="gap-target" style="left:88%;"></div></div>
-      <span class="gap-grade">5 / 8</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Geography</span>
-      <div class="gap-bar"><div class="gap-current" style="width:56%;"></div><div class="gap-target" style="left:88%;"></div></div>
-      <span class="gap-grade">5 / 8</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Maths</span>
-      <div class="gap-bar"><div class="gap-current" style="width:56%;"></div><div class="gap-target" style="left:88%;"></div></div>
-      <span class="gap-grade">5 / 8</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Physics</span>
-      <div class="gap-bar"><div class="gap-current" style="width:56%;"></div><div class="gap-target" style="left:94%;"></div></div>
-      <span class="gap-grade">5 / 9</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Spanish</span>
-      <div class="gap-bar"><div class="gap-current" style="width:44%;"></div><div class="gap-target" style="left:88%;"></div></div>
-      <span class="gap-grade">4 / 8</span>
-    </div>
-    <div class="gap-row">
-      <span class="gap-subject">Biology</span>
-      <div class="gap-bar"><div class="gap-current" style="width:44%;"></div><div class="gap-target" style="left:88%;"></div></div>
-      <span class="gap-grade">4 / 8</span>
-    </div>
+    <p class="question">Do you want to keep performing as part of your school week? How much exam pressure versus coursework feels right? Do you want the science-degree route open direct from school at 18?</p>
 
-    <div class="gap-legend">
-      <div class="legend-item"><div class="legend-mark"></div>Working grade now</div>
-      <div class="legend-item"><div class="legend-mark target"></div>Target</div>
-    </div>
-
-    <p style="margin-top:32px;font-size:15px;line-height:1.7;color:var(--rust-soft);">Year 11 decides which side of the A Level / BTEC line you start from. The single thing to fix is focus, flagged in 8 out of 10 subjects last term. Sort that out and most of these grades will move on their own. Paths 03 and 04 stay open either way. Path 01 needs grade 5s across the board. Path 02 needs Biology to come up properly.</p>
-  </section>
-
-  <!-- THE +1 -->
-  <section class="plus-one">
-    <h2>The +1 pick</h2>
-    <p><strong>EPQ. No question.</strong> You choose the topic. 5,000 words. Worth up to 28 UCAS points if you get an A*.</p>
-    <p>Topic options for you: a feasibility study for a UK family water park, a comparison of Center Parcs and Disney's Animal Kingdom as business models, or the economics of immersive animal experiences. Use it as a real piece of work. I'll show you how to use AI properly through the project.</p>
-    <p style="font-size:14px;color:var(--ink-soft);margin-top:18px;">If Path 04 ends up the route, swap EPQ for the Sports Leaders Award Level 3. Both worth UCAS points, both deliver something concrete.</p>
-  </section>
-
-  <!-- VERDICT -->
-  <section class="verdict">
-    <div class="eyebrow" style="color:var(--teal);">Where I land</div>
-    <h2>If I had to pick one, it's Path 03.</h2>
-    <p>Path 03 plays to your actual strengths and lines up with the career you keep describing, the one where you're running a place rather than working in someone else's office.</p>
-    <p>Path 01 is the more academic version of the same direction. Path 02 is only right if animals are the centre rather than part of the leisure offer. Path 04 is the strongest fit if Year 11 doesn't close the grade gap.</p>
-    <p>You're the one doing two years of it, not me. Read this, push back where I've got you wrong, and we'll go and talk to Mr Jones together.</p>
-    <div class="signature">— Mum &amp; Dad</div>
+    <p>If <strong>performing</strong> tops the list, that's <strong>Option 01</strong>. Drama only sits in one timetable block at Gordon's, and dropping it means dropping it. Hands-on animal work is still reachable later via a Level 3 Animal Management BTEC at Sparsholt or Plumpton, or a zookeeper apprenticeship, just with an extra step after sixth form.</p>
+    <p>If <strong>keeping the science degree route open</strong> tops the list, that's <strong>Option 02</strong>. Biology A Level is the cleanest way into zoology, animal behaviour or marine biology direct from school. Heaviest exam load of the three, and Drama goes.</p>
+    <p>If <strong>making things and lighter exam pressure</strong> tops the list, that's <strong>Option 03</strong>. Half coursework, half exam, with Media production work and BTEC portfolio assignments instead of three full A Level exam loads. Also a slightly lower grade bar, so it stays open more easily if Year 11 doesn't quite go to plan.</p>
+    <p>Read this. Push back. Tell us which version of yourself you see in two years.</p>
+    <div class="signature">— Dad &amp; Mum</div>
   </section>
 
   <div class="footnote">
-    Based on the Gordon's School Sixth Form Options &amp; Academic Guide 2026–27. Subject availability subject to minimum class sizes. Confirm at the autumn open evening.
+    Built from Gordon's School Sixth Form Options and Academic Guide 2026–27 and the 2026 Option Blocks grid. Coursework percentages from published Pearson Edexcel and AQA specifications. Subject availability and option blocks subject to change for the 2027–28 intake. Confirm at the autumn open evening.
   </div>
 
 </div>
